@@ -34,6 +34,12 @@ Route::middleware('guest:web')->group(function () {
     // Home Page
     Route::get('/', [pollingController::class, 'index']);
 
+    //privacy-policy
+    Route::get('privacy-policy', [LoginController::class, 'privacyPolicy']);
+
+    //terms-and-conditions
+    Route::get('terms-and-conditions', [LoginController::class, 'termsConditions']);
+
     // Google Login
     Route::get('auth/google', [LoginController::class, 'redirectToGoogle'])->name('google.login');
     Route::get('auth/google/callback', [LoginController::class, 'handleGoogleCallback'])->name('google.callback');
